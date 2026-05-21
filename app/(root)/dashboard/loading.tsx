@@ -13,13 +13,13 @@ export default function DashboardLoading() {
         <div className="flex flex-col gap-6 lg:gap-8">
           {/* Hero/Profile section */}
           <div className="h-64 rounded-2xl shimmer border border-white/10" />
-          
+
           {/* Stats Cards Grid - 2 cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <StatsCardSkeleton />
             <StatsCardSkeleton />
           </div>
-          
+
           {/* Bottom section */}
           <div className="h-48 rounded-2xl shimmer border border-white/10" />
         </div>
