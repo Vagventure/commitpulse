@@ -11,6 +11,8 @@ import { CustomizeCTA } from './components/CustomizeCTA';
 import { useRecentSearches } from '@/hooks/useRecentSearches';
 import { useDebounce } from '@/hooks/useDebounce';
 import { Footer } from '@/app/components/Footer';
+import InteractiveViewer from '@/components/InteractiveViewer';
+import { FeatureCard, FeatureCardsSection } from '@/components/FeatureCards';
 
 const Icons = {
   Github: () => (
@@ -423,60 +425,35 @@ export default function LandingPage() {
 
         <CustomizeCTA />
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <FeatureCardsSection>
           <FeatureCard
             icon={<Icons.Zap />}
-            accent="text-black dark:text-white"
+            accent="text-white"
+            accentColor="#10b981"
+            index={0}
             title="Real-time Sync"
             desc="Pulled directly from GitHub GraphQL API. Your streak updates as fast as your code pushes."
           />
           <FeatureCard
             icon={<Icons.Copy />}
-            accent="text-black dark:text-white"
+            accent="text-white"
+            accentColor="#8b5cf6"
+            index={1}
             title="Theme Engine"
             desc="Switch between Neon, Dracula, or custom HEX modes via simple URL management."
           />
           <FeatureCard
             icon={<Icons.Box />}
-            accent="text-black dark:text-white"
+            accent="text-white"
+            accentColor="#06b6d4"
+            index={2}
             title="Isometric Math"
             desc="Sophisticated 3D projection formulas turn 2D data into digital architecture."
           />
-        </div>
+        </FeatureCardsSection>
         <Footer />
       </main>
     </div>
-  );
-}
-
-function FeatureCard({
-  icon,
-  title,
-  desc,
-  accent,
-}: {
-  icon: ReactNode;
-  title: string;
-  desc: string;
-  accent: string;
-}) {
-  return (
-    <motion.div
-      whileHover={{ y: -5, scale: 1.02 }}
-      transition={{ type: 'spring', stiffness: 300 }}
-      className="group relative overflow-hidden rounded-3xl border border-black/5 bg-white/60 p-8 shadow-xl shadow-black/5 hover:border-emerald-500/30 dark:border-white/10 dark:bg-[#0a0a0a]/80 dark:shadow-2xl dark:shadow-black/50 dark:hover:border-emerald-500/40 dark:hover:bg-[#111] transition-all duration-300 backdrop-blur-xl"
-    >
-      <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-emerald-500/10 blur-3xl transition-all duration-500 group-hover:bg-emerald-500/20" />
-      <div
-        className={`mb-6 w-fit rounded-2xl bg-gradient-to-br from-gray-100 to-gray-50 p-3.5 text-black shadow-sm ring-1 ring-black/5 dark:from-white/10 dark:to-white/5 dark:text-white dark:ring-white/10 ${accent}`}
-      >
-        {icon}
-      </div>
-      <h3 className="mb-3 text-lg font-bold text-gray-900 dark:text-white tracking-tight">
-        {title}
-      </h3>
-      <p className="text-sm leading-relaxed text-gray-600 dark:text-white/65">{desc}</p>
-    </motion.div>
   );
 }
 

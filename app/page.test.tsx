@@ -29,6 +29,31 @@ vi.mock('next/link', () => ({
   ),
 }));
 
+// Mock GSAP so FeatureCards don't break in JSDOM
+vi.mock('gsap', () => {
+  const tween = { kill: vi.fn() };
+  const timeline = {
+    to: vi.fn().mockReturnThis(),
+    fromTo: vi.fn().mockReturnThis(),
+    set: vi.fn().mockReturnThis(),
+    kill: vi.fn(),
+  };
+  return {
+    default: {
+      registerPlugin: vi.fn(),
+      set: vi.fn(),
+      to: vi.fn().mockReturnValue(tween),
+      fromTo: vi.fn().mockReturnValue(tween),
+      timeline: vi.fn().mockReturnValue(timeline),
+      context: vi.fn((_fn: any) => ({ revert: vi.fn() })),
+    },
+  };
+});
+
+vi.mock('gsap/ScrollTrigger', () => ({
+  ScrollTrigger: {},
+}));
+
 // Mock framer-motion
 vi.mock('framer-motion', () => ({
   motion: {
