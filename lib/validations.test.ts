@@ -789,3 +789,14 @@ describe('streakParamsSchema — tz IANA timezone validation (Variation 4)', () 
     }
   });
 });
+
+describe('streakParamsSchema — date parameter validation', () => {
+  it('rejects an invalid ISO8601 calendar date format like "2026-15-40"', () => {
+    const result = streakParamsSchema.safeParse({
+      user: 'octocat',
+      date: '2026-15-40',
+    });
+
+    expect(result.success).toBe(false);
+  });
+});

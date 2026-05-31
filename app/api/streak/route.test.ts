@@ -558,10 +558,10 @@ describe('GET /api/streak', () => {
       expect(body.details.fieldErrors.year[0]).toContain('GitHub was founded in 2008');
     });
 
-    it('returns 200 for unknown ?date= parameter (not part of schema)', async () => {
-      const response = await GET(makeRequest({ user: 'octocat', date: '2026-15-40' }));
-      expect(response.status).toBe(200);
-    });
+    // it('returns 200 for unknown ?date= parameter (not part of schema)', async () => {
+    //   const response = await GET(makeRequest({ user: 'octocat', date: '2026-15-40' }));
+    //   expect(response.status).toBe(200);
+    // });
 
     it('returns 400 for malformed numeric year', async () => {
       const response = await GET(makeRequest({ user: 'octocat', year: '100000' }));
@@ -610,6 +610,16 @@ describe('GET /api/streak', () => {
       const response = await GET(makeRequest({ user: 'octocat', year: currentYear }));
 
       expect(response.status).toBe(200);
+    });
+
+    describe('date parameter', () => {
+      it('returns 400 when an invalid ISO8601 calendar date format like "2026-15-40" is supplied', async () => {
+        const response = await GET(makeRequest({ user: 'octocat', date: '2026-15-40' }));
+        const body = await response.json();
+
+        expect(response.status).toBe(400);
+        expect(body.details.fieldErrors.date[0]).toContain('Invalid "date" format');
+      });
     });
   });
 
