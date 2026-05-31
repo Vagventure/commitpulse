@@ -1,8 +1,5 @@
 // lib/validations.ts
-<<<<<<< HEAD
 import { supportedLanguages } from './i18n/badgeLabels';
-=======
->>>>>>> 39f3891 (test(validation): add invalid timezone boundary checks)
 import { z } from 'zod';
 import {
   isValidHex,
@@ -187,21 +184,6 @@ const baseStreakParamsSchema = z.object({
         return !isNaN(Date.parse(val));
       },
       { message: 'Invalid "to" date format. Use ISO 8601 (e.g. 2023-12-31).' }
-    ),
-  tz: z
-    .string()
-    .optional()
-    .refine(
-      (val) => {
-        if (!val) return true;
-        try {
-          new Intl.DateTimeFormat(undefined, { timeZone: val });
-          return true;
-        } catch {
-          return false;
-        }
-      },
-      { message: 'Invalid timezone. Must be a valid IANA timezone (e.g. America/New_York).' }
     ),
   refresh: z.string().optional().transform(toRefreshFlag),
   hide_title: z.string().optional().transform(toBooleanFlag),
