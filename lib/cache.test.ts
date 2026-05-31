@@ -500,6 +500,34 @@ describe('TTLCache', () => {
       cache.destroy();
     });
 
+    it('verify TTLCache behavior for empty string keys (Variation 2)', () => {
+      const cache = new TTLCache<string>();
+
+      // Assert that setting a value with empty string key throws error
+      expect(() => {
+        cache.set('', 'test-value', 60_000);
+      }).toThrow(Error);
+
+      // Verify the error message is correct
+      expect(() => {
+        cache.set('', 'test-value', 60_000);
+      }).toThrow('Cache key cannot be empty');
+
+      // Verify that cache remains empty (no entry for empty key)
+      expect(cache.has('')).toBe(false);
+      expect(cache.get('')).toBeNull();
+
+      // Verify cache size is still 0
+      expect(cache.size()).toBe(0);
+
+      // Verify that normal operations still work after failed attempt
+      cache.set('valid-key', 'value', 60_000);
+      expect(cache.get('valid-key')).toBe('value');
+      expect(cache.size()).toBe(1);
+
+      cache.destroy();
+    });
+
     it('handles rapid get/set/delete cycles', () => {
       const cache = new TTLCache<number>();
       for (let i = 0; i < 100; i++) {
