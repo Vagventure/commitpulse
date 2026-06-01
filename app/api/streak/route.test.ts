@@ -570,6 +570,41 @@ describe('GET /api/streak', () => {
 
       expect(response.status).toBe(200);
     });
+
+    it('produces different SVG output for scale=log versus scale=linear with mixed contribution counts', async () => {
+      // Mix of low (1) and high (100) counts: linear scales them 1× vs 100×,
+      // log compresses the ratio to log₂(2) vs log₂(101) — guaranteed to produce
+      // different tower heights and therefore different path data in the SVG.
+      vi.mocked(fetchGitHubContributions).mockResolvedValue({
+        calendar: {
+          totalContributions: 203,
+          weeks: [
+            {
+              contributionDays: [
+                { contributionCount: 1, date: '2024-06-10' },
+                { contributionCount: 5, date: '2024-06-11' },
+                { contributionCount: 20, date: '2024-06-12' },
+                { contributionCount: 100, date: '2024-06-13' },
+                { contributionCount: 50, date: '2024-06-14' },
+                { contributionCount: 5, date: '2024-06-15' },
+                { contributionCount: 1, date: '2024-06-16' },
+              ],
+            },
+          ],
+        },
+        repoContributions: [],
+      } as unknown as ExtendedContributionData);
+
+      const linearResponse = await GET(makeRequest({ user: 'octocat', scale: 'linear' }));
+      const logResponse = await GET(makeRequest({ user: 'octocat', scale: 'log' }));
+
+      const linearBody = await linearResponse.text();
+      const logBody = await logResponse.text();
+
+      expect(linearResponse.status).toBe(200);
+      expect(logResponse.status).toBe(200);
+      expect(linearBody).not.toBe(logBody);
+    });
   });
 
   describe('year parameter', () => {
