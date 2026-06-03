@@ -38,9 +38,19 @@ function getLuminance(hex: string) {
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
 
-  const { user, theme, bg, text, accent } = ogParamsSchema.parse(
-    Object.fromEntries(searchParams.entries())
-  );
+  const parseResult = ogParamsSchema.safeParse(Object.fromEntries(searchParams.entries()));
+
+  if (!parseResult.success) {
+    return new Response(
+      JSON.stringify({ error: 'Invalid parameters', details: parseResult.error.flatten() }),
+      {
+        status: 400,
+        headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' },
+      }
+    );
+  }
+
+  const { user, theme, bg, text, accent, refresh } = parseResult.data;
 
   const selectedTheme = themes[theme] || themes.dark;
   const resolvedBg = `#${bg || selectedTheme.bg}`;
@@ -59,7 +69,7 @@ export async function GET(req: NextRequest) {
 
   // Only the data fetching is wrapped in try/catch — not the JSX rendering.
   try {
-    const calendar = await fetchGitHubContributions(user, { bypassCache: true });
+    const calendar = await fetchGitHubContributions(user, { bypassCache: refresh });
     const stats = calculateStreak(calendar);
     totalCommits = stats.totalContributions;
     longestStreak = stats.longestStreak;
@@ -68,6 +78,10 @@ export async function GET(req: NextRequest) {
     console.error('[OG] stats fetch failed:', err);
     // fallback to zeros if GitHub is unreachable
   }
+
+  const cacheControl = refresh
+    ? 'no-cache, no-store, must-revalidate'
+    : 'public, max-age=3600, stale-while-revalidate=86400';
 
   return new ImageResponse(
     <div
@@ -189,7 +203,7 @@ export async function GET(req: NextRequest) {
       width: 1200,
       height: 630,
       headers: {
-        'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400',
+        'Cache-Control': cacheControl,
       },
     }
   );

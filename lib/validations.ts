@@ -257,6 +257,7 @@ export const ogParamsSchema = z
       .optional()
       .transform(toEmptyStringAsUndefined)
       .transform(toValidHexColor('000000')),
+    refresh: z.string().optional().transform(toRefreshFlag),
   })
   .transform((data) => ({
     ...data,
