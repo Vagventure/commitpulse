@@ -358,7 +358,7 @@ export async function GET(request: Request) {
       const ifNoneMatch = request.headers.get('if-none-match');
 
       if (ifNoneMatch) {
-        const etags = ifNoneMatch.split(',').map(e => e.trim());
+        const etags = ifNoneMatch.split(',').map((e) => e.trim());
         if (etags.includes(weakEtag) || etags.includes(`"${etag}"`)) {
           return new NextResponse(null, {
             status: 304,
@@ -420,7 +420,7 @@ export async function GET(request: Request) {
     const ifNoneMatch = request.headers.get('if-none-match');
 
     if (ifNoneMatch) {
-      const etags = ifNoneMatch.split(',').map(e => e.trim());
+      const etags = ifNoneMatch.split(',').map((e) => e.trim());
       if (etags.includes(weakEtag) || etags.includes(`"${etag}"`)) {
         return new NextResponse(null, {
           status: 304,
