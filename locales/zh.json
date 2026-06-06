@@ -7,7 +7,8 @@
     "menu_open": "\u6253\u5f00\u83dc\u5355",
     "menu_close": "\u5173\u95ed\u83dc\u5355",
     "compare": "\u5bf9\u6bd4",
-    "customization_studio": "\u81ea\u5b9a\u4e49\u5de5\u4f5c\u5ba4"
+    "customization_studio": "\u81ea\u5b9a\u4e49\u5de5\u4f5c\u5ba4",
+    "generator": "\u751f\u6210\u5668"
   },
   "footer": {
     "tagline": "\u4e13\u4e3a\u7cbe\u82f1\u5f00\u53d1\u8005\u793e\u533a\u8bbe\u8ba1\u3002",
@@ -27,7 +28,8 @@
     "creator_github": "GitHub \u4e0a\u7684\u521b\u5efa\u8005",
     "discord": "Discord",
     "twitter": "Twitter",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "generator": "\u751f\u6210\u5668"
   },
   "landing": {
     "title": "\u63d0\u5347\u60a8\u7684\n{\u8d21\u732e}\u6545\u4e8b\u3002",
@@ -58,7 +60,8 @@
     "verifying": "\u6b63\u5728\u9a8c\u8bc1...",
     "preview_monolith": "\u9884\u89c8\u5355\u4f53",
     "interactive_preview_title": "\u4ea4\u4e92\u5f0f\u5355\u4f53\u9884\u89c8",
-    "interactive_preview_desc": "CommitPulse \u5c06\u60a8\u7684\u516c\u5f00 GitHub \u8d21\u752e\u5386\u53f2\u7f16\u8bd1\u6210\u4e00\u4e2a\u53ef\u5b9a\u5236\u7684 3D \u57ce\u5e02\u3002\u5854\u8d8a\u9ad8\uff0c\u4ee3\u8868\u60a8\u90a3\u5929\u7684\u63d0\u4ea4\u8d8a\u591a\u3002\u5728\u4e0a\u65b9\u8f93\u5165 GitHub \u7528\u6237\u540d\u5373\u53ef\u7acb\u5373\u751f\u6210\u60a8\u7685\u8fde\u7eed\u63d0\u4ea4\u5fbd\u7ae0\u3002"
+    "interactive_preview_desc": "CommitPulse \u5c06\u60a8\u7684\u516c\u5f00 GitHub \u8d21\u752e\u5386\u53f2\u7f16\u8bd1\u6210\u4e00\u4e2a\u53ef\u5b9a\u5236\u7684 3D \u57ce\u5e02\u3002\u5854\u8d8a\u9ad8\uff0c\u4ee3\u8868\u60a8\u90a3\u5929\u7684\u63d0\u4ea4\u8d8a\u591a\u3002\u5728\u4e0a\u65b9\u8f93\u5165 GitHub \u7528\u6237\u540d\u5373\u53ef\u7acb\u5373\u751f\u6210\u60a8\u7685\u8fde\u7eed\u63d0\u4ea4\u5fbd\u7ae0\u3002",
+    "input_aria_label": "\u8f93\u5165 GitHub \u7528\u6237\u540d\u4ee5\u751f\u6210\u5fbd\u7ae0"
   },
   "success_guide": {
     "title": "\u60a8\u7684\u67f1\u72b6\u56fe\u5df2\u51c6\u5907\u5c31\u7eea - \u4ec5\u9700 4 \u6b65\u5373\u53ef\u90e8\u7f72",
@@ -151,7 +154,7 @@
       "lines_modified": "\u5df2\u4fee\u6539 {{count}} \u884c\u4ee3\u7801"
     },
     "languages": {
-      "title": "\u8bed\u8a00\u5206\u5e03",
+      "title": "\u70ed\u95e8\u8bed\u8a00",
       "primary": "\u4e3b\u8981\u5f00\u53d1\u8bed\u8a00",
       "no_data": "\u672a\u627e\u5230\u8bed\u8a00\u6570\u636e"
     },
@@ -218,7 +221,8 @@
       "downloaded": "\u5df2\u4e0b\u8f7d\uff01",
       "svg_downloaded": "SVG \u5df2\u4e0b\u8f7d\uff01",
       "json_downloaded": "JSON \u5df2\u4e0b\u8f7d\uff01",
-      "failed": "\u64cd\u4f5c\u5931\u8d25 \u2014 \u8bf7\u91cd\u8bd5"
+      "failed": "\u64cd\u4f5c\u5931\u8d25 \u2014 \u8bf7\u91cd\u8bd5",
+      "download_stl": "\u4e0b\u8f7d\u53ef\u6253\u5370\u7684 3D STL \u6574\u4f53\u7ed3\u6784\uff08\u5373\u5c06\u63a8\u51fa\uff09"
     }
   }
 }

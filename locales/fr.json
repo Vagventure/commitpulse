@@ -7,7 +7,8 @@
     "menu_open": "Ouvrir le menu",
     "menu_close": "Fermer le menu",
     "compare": "Comparer",
-    "customization_studio": "Studio de Personnalisation"
+    "customization_studio": "Studio de Personnalisation",
+    "generator": "G\u00e9n\u00e9rateur"
   },
   "footer": {
     "tagline": "Con\u00e7u pour la communaut\u00e9 des d\u00e9veloppeurs d'\u00e9lite.",
@@ -27,7 +28,8 @@
     "creator_github": "Cr\u00e9ateur sur GitHub",
     "discord": "Discord",
     "twitter": "Twitter",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "generator": "G\u00e9n\u00e9rateur"
   },
   "landing": {
     "title": "Sublimez Votre\nHistoire de {Contributions}.",
@@ -58,7 +60,8 @@
     "verifying": "V\u00e9rification...",
     "preview_monolith": "APERCU DU MONOLITHE",
     "interactive_preview_title": "Aper\u00e7u interactif du monolithe",
-    "interactive_preview_desc": "CommitPulse compile votre historique de contributions GitHub publiques dans une ville 3D personnalisable. Plus les tours sont hautes, plus vous avez contribu\u00e9 ce jour-l\u00e0. Entrez un nom d'utilisateur GitHub ci-dessus pour g\u00e9n\u00e9rer instantan\u00e9ment votre badge de streak."
+    "interactive_preview_desc": "CommitPulse compile votre historique de contributions GitHub publiques dans une ville 3D personnalisable. Plus les tours sont hautes, plus vous avez contribu\u00e9 ce jour-l\u00e0. Entrez un nom d'utilisateur GitHub ci-dessus pour g\u00e9n\u00e9rer instantan\u00e9ment votre badge de streak.",
+    "input_aria_label": "Entrez le nom d'utilisateur GitHub pour g\u00e9n\u00e9rer le badge"
   },
   "success_guide": {
     "title": "Votre Monolithe est Pr\u00eat - D\u00e9ployez-le en 4 \u00e9tapes",
@@ -151,7 +154,7 @@
       "lines_modified": "{{count}} lignes modifi\u00e9es"
     },
     "languages": {
-      "title": "R\u00e9partition des langues",
+      "title": "Principales langues",
       "primary": "Langue principale",
       "no_data": "Aucune donn\u00e9e de langue trouv\u00e9e"
     },
@@ -218,7 +221,8 @@
       "downloaded": "T\u00e9l\u00e9charg\u00e9 !",
       "svg_downloaded": "SVG t\u00e9l\u00e9charg\u00e9 !",
       "json_downloaded": "JSON t\u00e9l\u00e9charg\u00e9 !",
-      "failed": "\u00c9chec \u2014 r\u00e9essayez"
+      "failed": "\u00c9chec \u2014 r\u00e9essayez",
+      "download_stl": "T\u00e9l\u00e9charger le monolithe STL 3D imprimable (bient\u00f4t disponible)"
     }
   }
 }

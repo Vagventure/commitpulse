@@ -34,7 +34,7 @@ describe('LanguageChart theme contrast', () => {
   it('renders title with light and dark contrast text classes', () => {
     render(<LanguageChart languages={languages} />);
 
-    const title = screen.getByText('Language Breakdown');
+    const title = screen.getByText('Top Languages');
 
     expect(title.className).toContain('text-zinc-900');
     expect(title.className).toContain('dark:text-white');

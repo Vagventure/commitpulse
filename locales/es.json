@@ -7,7 +7,8 @@
     "menu_open": "Abrir men\u00fa",
     "menu_close": "Cerrar men\u00fa",
     "compare": "Comparar",
-    "customization_studio": "Estudio de Personalizaci\u00f3n"
+    "customization_studio": "Estudio de Personalizaci\u00f3n",
+    "generator": "Generador"
   },
   "footer": {
     "tagline": "Dise\u00f1ado para la comunidad de desarrolladores de \u00e9lite.",
@@ -27,7 +28,8 @@
     "creator_github": "Creador en GitHub",
     "discord": "Discord",
     "twitter": "Twitter",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "generator": "Generador"
   },
   "landing": {
     "empty_username_warning": "Ingresa un usuario de GitHub para copiar el enlace de tu insignia.",
@@ -62,7 +64,8 @@
     "verifying": "Verificando...",
     "preview_monolith": "MONOLITO DE PREVISUALIZACI\u00d3N",
     "interactive_preview_title": "Previsualizaci\u00f3n interactiva del monolito",
-    "interactive_preview_desc": "CommitPulse compila tu historial de contribuciones p\u00fablicas de GitHub en una ciudad 3D customizable. Cuanto m\u00e1s altas son las torres, m\u00e1s commits hiciste ese d\u00e1. Ingresa un nombre de usuario de GitHub arriba para generar instant\u00e1neamente tu insignia."
+    "interactive_preview_desc": "CommitPulse compila tu historial de contribuciones p\u00fablicas de GitHub en una ciudad 3D customizable. Cuanto m\u00e1s altas son las torres, m\u00e1s commits hiciste ese d\u00e1. Ingresa un nombre de usuario de GitHub arriba para generar instant\u00e1neamente tu insignia.",
+    "input_aria_label": "Ingresa el usuario de GitHub para generar la insignia"
   },
   "success_guide": {
     "title": "Tu monolito est\u00e1 listo - Despli\u00e9galo en 4 pasos",
@@ -165,7 +168,7 @@
       "lines_modified": "{{count}} l\u00edneas modificadas"
     },
     "languages": {
-      "title": "Desglose de idiomas",
+      "title": "Idiomas principales",
       "primary": "Idioma principal",
       "no_data": "No se encontraron datos de idiomas"
     },
@@ -232,7 +235,8 @@
       "downloaded": "\u00a1Descargado!",
       "svg_downloaded": "\u00a1SVG descargado!",
       "json_downloaded": "\u00a1JSON descargado!",
-      "failed": "Error \u2014 intenta de nuevo"
+      "failed": "Error \u2014 intenta de nuevo",
+      "download_stl": "Descargar monolito 3D imprimible STL (pr\u00f3ximamente)"
     }
   }
 }

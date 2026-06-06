@@ -7,7 +7,8 @@
     "menu_open": "Open menu",
     "menu_close": "Close menu",
     "compare": "Compare",
-    "customization_studio": "Customization Studio"
+    "customization_studio": "Customization Studio",
+    "generator": "Generator"
   },
   "footer": {
     "tagline": "Designed for the elite builder community.",
@@ -27,7 +28,8 @@
     "creator_github": "Creator on GitHub",
     "discord": "Discord",
     "twitter": "Twitter",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "generator": "Generator"
   },
   "landing": {
     "empty_username_warning": "Please enter a GitHub username to copy your badge link.",
@@ -62,7 +64,8 @@
     "verifying": "Verifying...",
     "preview_monolith": "PREVIEW MONOLITH",
     "interactive_preview_title": "Interactive Monolith Preview",
-    "interactive_preview_desc": "CommitPulse compiles your public GitHub contribution history into a customizable 3D city. The taller the towers, the more you committed that day. Enter a GitHub username above to instantly generate your streak badge."
+    "interactive_preview_desc": "CommitPulse compiles your public GitHub contribution history into a customizable 3D city. The taller the towers, the more you committed that day. Enter a GitHub username above to instantly generate your streak badge.",
+    "input_aria_label": "Enter GitHub username to generate badge"
   },
   "success_guide": {
     "title": "Your Monolith is Ready - Deploy It in 4 Steps",
@@ -165,7 +168,7 @@
       "lines_modified": "{{count}} lines modified"
     },
     "languages": {
-      "title": "Language Breakdown",
+      "title": "Top Languages",
       "primary": "Primary Language",
       "no_data": "No language data found"
     },
@@ -237,7 +240,7 @@
       "export_options": "Export Options",
       "github_wrapped": "GitHub Wrapped",
       "download_webp": "Download Optimized WebP",
-      "download_stl": "Download Printable 3D STL Monolith"
+      "download_stl": "Download Printable 3D STL (Coming Soon)"
     }
   }
 }

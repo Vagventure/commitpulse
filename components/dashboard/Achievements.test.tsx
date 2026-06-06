@@ -139,7 +139,7 @@ describe('Achievements', () => {
     const lockedEl = screen.getByText('Achiev 2').parentElement;
 
     expect(unlockedEl?.className).not.toContain('grayscale');
-    expect(unlockedEl?.className).toContain('bg-zinc-50');
+    expect(unlockedEl?.className).toContain('bg-gray-100');
 
     expect(lockedEl?.className).toContain('grayscale');
     expect(lockedEl?.className).toContain('opacity-30');
@@ -178,7 +178,7 @@ describe('Achievements', () => {
     const card = screen.getByText('Weekend Warrior').parentElement;
     // Unlocked card should NOT have grayscale
     expect(card?.className).not.toContain('grayscale');
-    expect(card?.className).toContain('bg-zinc-50');
+    expect(card?.className).toContain('bg-gray-100');
   });
 
   it('renders a behavior achievement (Polyglot) as locked with progress bar text', () => {

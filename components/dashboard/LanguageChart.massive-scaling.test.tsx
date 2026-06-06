@@ -26,7 +26,7 @@ describe('LanguageChart massive scaling', () => {
   it('renders without crashing for massive language dataset', () => {
     render(<LanguageChart languages={massiveLanguages} />);
 
-    expect(screen.getByText('Language Breakdown')).toBeInTheDocument();
+    expect(screen.getByText('Top Languages')).toBeInTheDocument();
     expect(screen.getAllByText('Language-0').length).toBeGreaterThan(0);
   });
 

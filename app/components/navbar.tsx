@@ -126,6 +126,7 @@ export default function Navbar() {
     if (label === 'GitHub Repo') return t('navbar.repo');
     if (label === 'Compare') return t('navbar.compare');
     if (label === 'Customization Studio') return t('navbar.customization_studio');
+    if (label === 'Generator') return t('navbar.generator');
     return label;
   };
 
@@ -196,7 +197,11 @@ export default function Navbar() {
                   }`}
                 >
                   {link.isExternal && <GithubMark />}
-                  {getTranslatedLabel(link.label)}
+                  {link.label === 'GitHub Repo' ? (
+                    <span className="hidden lg:inline">{getTranslatedLabel(link.label)}</span>
+                  ) : (
+                    <span>{getTranslatedLabel(link.label)}</span>
+                  )}
                 </a>
               ))}
 

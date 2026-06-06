@@ -25,7 +25,7 @@ describe('LanguageChart', () => {
   it('renders an empty state when no language data is available', () => {
     render(<LanguageChart languages={[]} />);
 
-    expect(screen.getByText('Language Breakdown')).toBeDefined();
+    expect(screen.getByText('Top Languages')).toBeDefined();
     expect(screen.getByText('No language data found')).toBeDefined();
   });
 

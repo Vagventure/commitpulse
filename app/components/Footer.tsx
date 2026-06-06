@@ -64,6 +64,7 @@ export function Footer() {
 
   const navigationLinks: FooterLink[] = [
     { label: t('footer.home'), href: '/', isExternal: false },
+    { label: t('footer.generator'), href: '/generator', isExternal: false },
     { label: t('footer.compare'), href: '/compare', isExternal: false },
     { label: t('footer.customization'), href: '/customize', isExternal: false },
     { label: t('footer.contributors'), href: '/contributors', isExternal: false },
@@ -103,8 +104,8 @@ export function Footer() {
     },
     {
       label: t('footer.twitter'),
-      href: 'https://twitter.com/JhaSourav07',
-      ariaLabel: 'Creator on Twitter/X',
+      href: 'https://x.com/JhaSourav07',
+      ariaLabel: 'Creator on X',
       icon: 'twitter',
     },
     {

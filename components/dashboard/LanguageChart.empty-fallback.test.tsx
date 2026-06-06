@@ -19,7 +19,7 @@ describe('LanguageChart empty fallback', () => {
   it('renders fallback UI for empty languages array', () => {
     render(<LanguageChart languages={[]} />);
 
-    expect(screen.getByText('Language Breakdown')).toBeInTheDocument();
+    expect(screen.getByText('Top Languages')).toBeInTheDocument();
     expect(screen.getByText('No language data found')).toBeInTheDocument();
   });
 
