@@ -123,14 +123,20 @@ export function PreviewPanel({ markdown }: PreviewPanelProps) {
           <div className="p-6 min-h-full">
             <div className="rounded-xl border border-gray-200 dark:border-white/8 bg-white dark:bg-[#0d1117] p-6 min-h-[200px]">
               <div
-                className="readme-preview text-gray-800 dark:text-[#e6edf3] text-sm leading-relaxed"
+                className="readme-preview text-gray-800 dark:text-[#e6edf3] text-sm leading-relaxed wrap-break-word"
                 dangerouslySetInnerHTML={{ __html: previewHtml }}
               />
             </div>
           </div>
         ) : (
           <div className="relative h-full">
-            <pre className="p-5 text-xs font-mono leading-relaxed text-gray-700 dark:text-white/70 whitespace-pre-wrap break-words overflow-auto h-full select-all">
+            <pre
+              className="p-5 text-xs font-mono leading-relaxed text-gray-700 dark:text-white/70 whitespace-pre-wrap overflow-auto h-full select-all"
+              style={{
+                overflowWrap: 'anywhere',
+                wordBreak: 'break-word',
+              }}
+            >
               {markdown}
             </pre>
           </div>
@@ -154,6 +160,7 @@ export function PreviewPanel({ markdown }: PreviewPanelProps) {
         .readme-preview h1, .readme-preview h2, .readme-preview h3 { margin: 0.75rem 0 0.25rem; }
         .readme-preview hr { margin: 1rem 0; border-color: rgba(255,255,255,0.08); }
         .readme-preview a img { border-radius: 6px; }
+        .readme-preview { overflow-wrap: anywhere; word-break: break-word; }
       `}</style>
     </div>
   );
