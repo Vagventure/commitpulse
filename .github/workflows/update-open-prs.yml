@@ -26,7 +26,7 @@ jobs:
 
           echo "Fetching open pull requests..."
           # Retrieve numbers, head repos, and branch names of all open pull requests
-          prs=$(gh pr list --state open --json number,title,headRepository,headRefName --jq '.[] | "\(.number)|\(.title)|\(.headRepository.owner.login // "null")|\(.headRepository.name // "null")|\(.headRefName)"')
+          prs=$(gh pr list --state open --limit 1000 --json number,title,headRepository,headRepositoryOwner,headRefName --jq '.[] | "\(.number)|\(.title)|\(.headRepositoryOwner.login // "null")|\(.headRepository.name // "null")|\(.headRefName)"')
 
           if [ -z "$prs" ]; then
             echo "No open pull requests found."
