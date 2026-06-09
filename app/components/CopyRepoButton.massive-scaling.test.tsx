@@ -103,9 +103,9 @@ describe('CopyRepoButton Massive Scaling', () => {
     expect(screen.queryByText('Copied!')).toBeNull();
     // Use a function matcher to handle text split across multiple elements
     expect(
-      screen.getAllByText((content, element) => {
+      screen.getByText((content, element) => {
         return element?.textContent?.includes('Copy failed') ?? false;
-      })[0]
+      })
     ).toBeDefined();
   });
 });
