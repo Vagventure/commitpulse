@@ -49,6 +49,25 @@ describe('SectionCard Accessibility', () => {
     const toggleButton = screen.getByRole('button', { name: new RegExp(titleText, 'i') });
     expect(toggleButton).toBeInTheDocument();
 
+    // Verify accessibility attributes on toggle button
+    expect(toggleButton).toHaveAttribute('aria-expanded', 'true');
+    const contentId = toggleButton.getAttribute('aria-controls');
+    expect(contentId).toBeTruthy();
+
+    const descriptionId = toggleButton.getAttribute('aria-describedby');
+    expect(descriptionId).toBeTruthy();
+
+    // Verify the description element exists and carries the correct ID
+    const descElement = screen.getByText(descText);
+    expect(descElement).toHaveAttribute('id', descriptionId!);
+
+    // Verify the content region exists, carries the correct role, ID, and label
+    const contentRegion = screen.getByRole('region', { name: new RegExp(titleText, 'i') });
+    expect(contentRegion).toHaveAttribute('id', contentId!);
+
+    const titleElement = screen.getByText(titleText);
+    expect(titleElement).toHaveAttribute('id', contentRegion.getAttribute('aria-labelledby')!);
+
     // Verify children containing fields using ARIA attributes map correctly
     const textInput = screen.getByRole('textbox', { name: 'Full Name' });
     expect(textInput).toBeInTheDocument();
@@ -165,8 +184,14 @@ describe('SectionCard Accessibility', () => {
     await user.tab();
     expect(document.body).toHaveFocus();
 
+    // Verify aria-expanded is true initially
+    expect(toggleButton).toHaveAttribute('aria-expanded', 'true');
+
     // Collapse the card by clicking the header button
     await user.click(toggleButton);
+
+    // Verify aria-expanded is updated to false
+    expect(toggleButton).toHaveAttribute('aria-expanded', 'false');
 
     // Verify children elements are unmounted from DOM
     expect(field1).not.toBeInTheDocument();
