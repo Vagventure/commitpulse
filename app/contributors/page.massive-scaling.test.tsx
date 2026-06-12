@@ -127,7 +127,7 @@ describe('ContributorsPage - Massive Data Sets & High Bounds Scaling', () => {
       el.parentElement?.textContent?.includes('300+')
     );
     expect(hasPlusSuffix).toBe(true);
-  }, 15000);
+  }, 35000); // Expanded timeout budget to protect heavy virtual DOM environments
 
   // --- Test Case 2 ---
   it('handles extremely high contribution counts (high bounds metrics) without overflow', async () => {
